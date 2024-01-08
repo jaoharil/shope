@@ -11,31 +11,31 @@ const ProductsData = [
     id: 1,
     img: Mobil1,
     title: 'bmw',
-    ratting: 5.0,
+    ratting: 5.5,
   },
   {
     id: 2,
     img: Mobil2,
     title: 'bmw',
-    ratting: 5.0,
+    ratting: 5.5,
   },
   {
     id: 3,
     img: Mobil3,
     title: 'bmw',
-    ratting: 5.0,
+    ratting: 5.5,
   },
   {
     id: 4,
     img: Mobil4,
     title: 'bmw',
-    ratting: 5.0,
+    ratting: 5.2,
   },
   {
     id: 5,
     img: Mobil5,
     title: 'bmw',
-    ratting: 5.0,
+    ratting: 5.3,
   },
 ];
 
@@ -53,8 +53,15 @@ export const Products = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center gap-5">
             {/* card section */}
             {ProductsData.map((data) => (
-              <div>
-                <img src={data.img} alt="" className="h-[220px] w-[350px] object-cover rounded-md" />
+              <div data-aos="fade-up" data-aos-delay={data.aosDelay} key={data.id} className="space-y-3">
+                <img src={data.img} alt="" className="h-[300px] w-[300px]  rounded-md" />
+                <div>
+                  <h3 className="font-bold">{data.title}</h3>
+                  <div className="flex items-center gap-1">
+                    <FaStar className="text-yellow-400"></FaStar>
+                    <p className="">{data.ratting}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
